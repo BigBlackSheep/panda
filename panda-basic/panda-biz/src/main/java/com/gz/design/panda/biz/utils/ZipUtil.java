@@ -14,7 +14,6 @@ import java.util.zip.CheckedOutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
-import org.apache.avalon.framework.parameters.ParameterException;
 import org.apache.commons.lang3.StringUtils;
 
 public class ZipUtil {
@@ -77,7 +76,7 @@ public class ZipUtil {
      */
     public static void zip(String srcPath, String zipPath, String zipFileName) throws Exception {
         if (StringUtils.isEmpty(srcPath) || StringUtils.isEmpty(zipPath) || StringUtils.isEmpty(zipFileName)) {
-            throw new ParameterException("parameter is null!");
+            throw new Exception("parameter is null!");
         }
         CheckedOutputStream cos = null;
         ZipOutputStream zos = null;
@@ -85,7 +84,7 @@ public class ZipUtil {
             File srcFile = new File(srcPath);
             //判断压缩文件保存的路径是否为源文件路径的子文件夹，如果是，则抛出异常（防止无限递归压缩的发生）
             if (srcFile.isDirectory() && zipPath.indexOf(srcPath) != -1) {
-                throw new ParameterException("zipPath must not be the child directory of srcPath.");
+                throw new Exception("zipPath must not be the child directory of srcPath.");
             }
 
             //判断压缩文件保存的路径是否存在，如果不存在，则创建目录
@@ -200,7 +199,7 @@ public class ZipUtil {
     @SuppressWarnings("unchecked")
     public static void unzip(String zipFilePath, String unzipFilePath, boolean includeZipFileName) throws Exception {
         if (StringUtils.isEmpty(zipFilePath) || StringUtils.isEmpty(unzipFilePath)) {
-            throw new ParameterException("parameter is null!");
+            throw new Exception("parameter is null!");
         }
         File zipFile = new File(zipFilePath);
         //如果解压后的文件保存路径包含压缩文件的文件名，则追加该文件名到解压路径

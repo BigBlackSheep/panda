@@ -44,24 +44,24 @@ public class PdfUtils {
         doc.close();
     }
 
-    public static void main(String[] args) {
-        String templatePath = "C:\\Users\\9188\\Desktop\\exportPDF\\BorrowerAccidentInsurancetemplate.pdf";
-        String newPDFPath =  "C:\\Users\\9188\\Desktop\\exportPDF\\PDFTest\\123.pdf";
-        Map<String,String> map = new HashMap();
-        map.put("name","张三张三");
-        map.put("id","411326199212161518");
-        map.put("amount","198");
-        map.put("year","2018");
-        map.put("month","12");
-        map.put("day","26");
-    try {
-        pdfout(map,templatePath,newPDFPath);
-    } catch (IOException e) {
-        e.printStackTrace();
-    } catch (DocumentException e) {
-        e.printStackTrace();
-    }
-
-
-    }
+//    public static void main(String[] args) {
+//        String templatePath = "C:\\Users\\9188\\Desktop\\exportPDF\\BorrowerAccidentInsurancetemplate.pdf";
+//        String newPDFPath =  "C:\\Users\\9188\\Desktop\\exportPDF\\PDFTest\\123.pdf";
+//        Map<String,String> map = new HashMap();
+//        map.put("name","张三张三");
+//        map.put("id","411326199212161518");
+//        map.put("amount","198");
+//        map.put("year","2018");
+//        map.put("month","12");
+//        map.put("day","26");
+//    try {
+//        pdfout(map,templatePath,newPDFPath);
+//    } catch (IOException e) {
+//        e.printStackTrace();
+//    } catch (DocumentException e) {
+//        e.printStackTrace();
+//    }
+//
+//
+//    }
 }
